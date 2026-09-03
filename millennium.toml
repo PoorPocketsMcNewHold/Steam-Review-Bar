@@ -1,0 +1,16 @@
+﻿[plugin]
+id = "com.example.reviewbar"
+name = "Review Bar"
+version = "1.0.0"
+author = "SnipCheddaBombs"
+description = "Replaces Steam review labels with percentage score bars."
+
+[webkit]
+entry = "webview/preload.ts"
+
+[compiler]
+output_path = "auto"
+
+[dev]
+auto_restart = true
+reload_steamui_when = "backend"
