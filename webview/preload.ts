@@ -37,7 +37,6 @@ function injectStyles(): void {
     const style = document.createElement('style');
 
     style.id = 'reviewbar-styles';
-
     style.textContent = `
         :root {
             --reviewbar-positive: #66c0f4;
@@ -103,6 +102,14 @@ function injectStyles(): void {
             line-height: 16px;
             white-space: nowrap;
             text-overflow: ellipsis;
+        }
+
+        .reviewbar-store .reviewbar {
+            cursor: pointer;
+        }
+
+        .reviewbar-store .reviewbar:hover {
+            filter: brightness(1.15);
         }
 
         /* Search */
@@ -306,9 +313,15 @@ function buildStoreBar(
     label.className = 'reviewbar-source-label';
     label.textContent = `${sourceLabel}:`;
 
+    const bar = buildBar(score, 'normal');
+
+    bar.addEventListener('click', () => {
+        window.location.hash = 'app_reviews_hash';
+    });
+
     container.append(
         label,
-        buildBar(score, 'normal'),
+        bar,
     );
 
     return container;
