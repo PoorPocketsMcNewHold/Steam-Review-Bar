@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Review Bar
  *
  * Replaces Steam review labels with percentage score bars.
@@ -292,10 +292,7 @@ function buildBar(
     const label = document.createElement('span');
     label.className = 'reviewbar-label';
 
-    label.textContent =
-        mode === 'normal' && score.reviewCount
-            ? `${score.positivePct}% positive (${score.reviewCount.toLocaleString()})`
-            : `${score.positivePct}%`;
+    label.textContent = `${score.positivePct}%`;
 
     bar.append(track, label);
 
@@ -581,4 +578,7 @@ export default function main(): void {
         subtree: true,
     });
 }
+
+
+
 
