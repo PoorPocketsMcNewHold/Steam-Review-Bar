@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Review Bar
  *
  * Replaces Steam review labels with percentage score bars.
@@ -581,3 +581,4 @@ export default function main(): void {
         subtree: true,
     });
 }
+
