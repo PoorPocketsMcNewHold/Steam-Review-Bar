@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Review Bar
  *
  * Replaces Steam review labels with percentage score bars.
@@ -139,12 +139,12 @@ function injectStyles(): void {
 
         .reviewbar-wishlist {
             gap: 6px;
-            width: 110px;
+            width: 140px;
         }
 
         .reviewbar-wishlist .reviewbar-track {
-            width: 90px;
-            flex-basis: 90px;
+            width: 110px;
+            flex-basis: 110px;
             height: 7px;
         }
 
@@ -312,13 +312,16 @@ function buildStoreBar(
 
     const bar = buildBar(score, 'normal');
 
-    bar.addEventListener('click', () => {
-        window.location.hash = 'app_reviews_hash';
-    });
+    const link = document.createElement('a');
+    link.href = '#app_reviews_hash';
+    link.className = bar.className;
+    link.title = bar.title;
+    link.append(...bar.childNodes);
+    bar.replaceWith(link);
 
     container.append(
         label,
-        bar,
+        link,
     );
 
     return container;
@@ -578,6 +581,7 @@ export default function main(): void {
         subtree: true,
     });
 }
+
 
 
 
