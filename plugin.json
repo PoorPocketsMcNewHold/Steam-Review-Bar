@@ -1,0 +1,8 @@
+{
+  "$schema": "https://raw.githubusercontent.com/SteamClientHomebrew/Millennium/main/src/sys/plugin-schema.json",
+  "name": "com.snowfallinsummer.reviewbar",
+  "common_name": "Review Bar",
+  "description": "Displays Steam review percentages as positive/negative bars on store pages, search results, and the wishlist.",
+  "backendType": "none",
+  "webkitApiVersion": "2.0.0"
+}
