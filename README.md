@@ -7,27 +7,18 @@ Webkit-only plugin — no Lua backend needed. Runs as a preload script inside
 Steam's store-page browser view, reads the review percentage Steam already
 embeds in the tooltip of its own summary element, and swaps in a bar.
 
-## Setup (assumes Millennium is already installed)
+## Build and install
 
-1. Clone the official template — it already has working `package.json` /
-   `tsconfig.json` build tooling, don't hand-roll these:
-   ```sh
-   git clone https://github.com/SteamClientHomebrew/PluginTemplate reviewbar
-   cd reviewbar
-   ```
-2. Overwrite the template's `millennium.toml` with the one in this folder.
-3. Overwrite `webview/preload.ts` in the template with the one in this
-   folder (same path, so it drops straight in).
-4. Build:
-   ```sh
-   bun install
-   bun run build
-   ```
-   `output_path = "auto"` in `millennium.toml` should detect your Millennium
-   install and place the built plugin there. If it doesn't, locate your
-   Millennium `plugins/` folder manually and copy the build output in.
-5. Steam > Settings > Millennium > enable "Review Bar" in the plugin list.
-6. Fully restart Steam, open any store page.
+Requirements: [Millennium](https://github.com/SteamClientHomebrew/Millennium) and [Bun](https://bun.sh/).
+
+From this repository's root:
+
+```sh
+bun install
+bun run build
+```
+
+Starlight builds the plugin using the checked-in `millennium.toml`. Enable **Review Bar** in Millennium's plugin settings and restart Steam if needed.
 
 ## If it stops matching
 
@@ -47,15 +38,16 @@ Colors are CSS variables injected at the top of `injectStyles()` in
 `webview/preload.ts` (`--reviewbar-positive`, `--reviewbar-negative`) — edit
 those two hex values. Bar width/height/label format are right below.
 
-## What this doesn't do (yet)
+## Scope and limitations
 
-- Only touches the app store page rows — not library, not search results.
-- Uses Steam's own blended percentage as-is; doesn't hit Steam's review API
-  directly or recompute anything.
+- Works on Steam Store app pages, search results, and wishlist entries where Steam exposes review-percentage metadata.
+- Does not modify the Library UI or fetch review data from Steam's API; it uses information already present in the page.
+- Steam can change its DOM and tooltip markup, which may require selector updates.
 
-## Publishing to steambrew.app
+## AI assistance and maintenance
 
-Once it works locally: push this to its own GitHub repo, then open a PR
-against [PluginDatabase](https://github.com/SteamClientHomebrew/PluginDatabase)
-adding your repo as a git submodule under `plugins/`. Merged PRs get pinned
-at a reviewed commit and show up in the community plugin browser.
+AI tools assisted with parts of development and troubleshooting. The maintainer is responsible for reviewing, testing, and maintaining the code; AI assistance is disclosed here for submission transparency.
+
+## License
+
+MIT. See [LICENSE](LICENSE).
