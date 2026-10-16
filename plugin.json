@@ -2,7 +2,7 @@
   "$schema": "https://raw.githubusercontent.com/SteamClientHomebrew/Millennium/main/src/sys/plugin-schema.json",
   "name": "steam_review_bar",
   "common_name": "Review Bar",
-  "description": "Shows Steam review scores as positive and negative percentage bars on Store pages, search results, and wishlist entries.",
+  "description": "Shows positive and negative Steam review percentages in a bar.",
   "backendType": "none",
   "webkitApiVersion": "2.0.0"
 }
