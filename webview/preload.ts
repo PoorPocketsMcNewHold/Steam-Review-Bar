@@ -153,12 +153,7 @@ function injectStyles(): void {
             line-height: 14px;
         }
 
-        /* Steam header */
-
-        #global_header {
-            display: none !important;
-        }
-    `;
+        `;
 
     document.head.appendChild(style);
 }
