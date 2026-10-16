@@ -3,7 +3,7 @@ id = "com.snowfallinsummer.reviewbar"
 name = "Review Bar"
 version = "1.0.0"
 author = "SnipCheddaBombs"
-description = "Replaces Steam review labels with percentage score bars."
+description = "Shows positive and negative review percentages as a bar on supported Steam Store pages."
 
 [webkit]
 entry = "webview/preload.ts"
