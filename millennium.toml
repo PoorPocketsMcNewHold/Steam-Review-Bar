@@ -1,5 +1,5 @@
 ﻿[plugin]
-id = "com.example.reviewbar"
+id = "com.snowfallinsummer.reviewbar"
 name = "Review Bar"
 version = "1.0.0"
 author = "SnipCheddaBombs"
