@@ -1,7 +1,6 @@
 # Review Bar (Millennium plugin)
 
-Replaces Steam's text review labels ("Mixed", "Very Positive", etc.) on store
-pages with a simple two-color bar (blue = positive, red = negative).
+Replaces Steam's text review labels with a two-color positive/negative percentage bar on Store app pages, search results, and wishlist entries.
 
 Webkit-only plugin — no Lua backend needed. Runs as a preload script inside
 Steam's store-page browser view, reads the review percentage Steam already
